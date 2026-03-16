@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Stickman Bridge</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.png">
+
+</head>
+
+<body>
+
+<div class="game">
+
+<header class="hud">
+<div>Player: <span id="playerName"></span></div>
+<div>Score: <span id="score">0</span></div>
+<div>Best: <span id="bestScore">0</span></div>
+<div>Coins: <span id="coinCount">0</span></div>
+</header>
+
+<canvas id="gameCanvas"></canvas>
+
+<div id="namePrompt" class="overlay hidden">
+<h1>Enter Name</h1>
+<p>Your name will show in leaderboard.</p>
+<input id="nameInput" type="text" maxlength="16" placeholder="Player name" required>
+<button id="saveNameBtn">Start</button>
+</div>
+
+<div id="gameOver" class="overlay hidden">
+<h1>Game Over</h1>
+<p>Final Score: <span id="finalScore"></span></p>
+<button onclick="ensurePlayerNameThenStart()">Play Again</button>
+</div>
+
+<section class="leaderboard">
+<h3>Top Scores</h3>
+<ul id="leaderboardList"></ul>
+</section>
+
+</div>
+
+<audio id="bgMusic" src="music.mp3" preload="auto" loop></audio>
+
+<script src="profile.js"></script>
+<script src="leaderboard.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
